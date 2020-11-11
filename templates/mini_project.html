@@ -1,0 +1,36 @@
+<html>
+<head><title>Mini_Project</title><head>
+<body>
+	<div class='project'>
+
+		<h1> Predicting the review sentiment </h1><br>
+		<form action="{{ url_for('predict')}}"method="post">
+    	                    <input type="text" name="review" placeholder="Review" required="required" />
+        
+                                        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+                                        </form>
+
+                                      <br>
+                                     <br>
+                                    
+
+
+		<div class="my_prediction"
+		{% if prediction == 1%}
+		<h1 style="color:#008000;"><strong>Positive</strong></h1>
+		<span style='font-size:100px;'>&#128522;</span>
+
+		{% elif prediction == 0%}
+		<h1 style="color:#FF0000;"><strong>Negative</strong></h1>
+		<span style='font-size:100px;'>&#128545;</span>
+	
+		
+		
+	
+		{% endif %}
+		</div>
+		
+		
+	</div>
+</body>
+</html>
